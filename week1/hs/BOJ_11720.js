@@ -1,4 +1,4 @@
-// 입력 받기
+// 입력
 const fs = require("fs")
 const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n")
 
