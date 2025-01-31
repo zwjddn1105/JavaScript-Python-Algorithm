@@ -8,9 +8,9 @@ def solution(food_times, k):
     length = len(food_times)
     pre = 0
     complete = 0
-
+    print(food_times_table)
     for now, table_number in food_times_table:
-        now_time = (now-pre) * (length-complete) 
+        now_time = (now-pre) * (length-complete)
         
         if total + now_time > k:
             remain = food_times_table[complete:]
