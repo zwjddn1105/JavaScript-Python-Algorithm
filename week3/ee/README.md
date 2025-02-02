@@ -1,4 +1,4 @@
-# [백준준 10828] 스택 - js, py
+# [백준 10828] 스택 - js, py
 ## 삼항연산자
 JavaScript|Python
 ----------|--------
@@ -34,4 +34,17 @@ JavaScript|Python
 `stack[stack.length-1]`|`stack[-1]`
 
 - 파이썬에서는 당연하게 썼던 음수 인덱스를 사용하지 못한다. ㅠㅠ
+
+# [백준 2217] 로프 - js
+
+## 정렬
+
+```js
+arr.sort((a, b) => a - b) // 오름차순 정렬
+arr.sort((a, b) => b - a) // 내림차순 정렬
+```
+
+# [백준 1448] 삼각형만들기 - js
+
+# [백준 1260] DFS와 BFS - js OR py
 
