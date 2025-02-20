@@ -15,7 +15,7 @@ for i in range(M):
 """
 
 # 2차 제출 -- 시간 초과
-
+"""
 def binary_search(target, data):
     data.sort()
     start = 0
@@ -42,3 +42,24 @@ for i in range(M):
     result[i] = binary_search(check_list[i], SG_list)
 
 print(result)
+"""
+# 3차 제출 -- 오답
+
+N = int(input())
+SG_list = list(map(int, input().split()))
+M = int(input())
+check_list = list(map(int, input().split()))
+
+for check in check_list:
+    low, high = 0, N-1
+    exist = False
+    while low <= high:
+        mid = (low + high) // 2
+        if SG_list[mid] > check: 
+            high = mid - 1 
+        elif SG_list[mid] < check:
+            low = mid + 1 
+        else:
+            exist = True
+            break
+    print(1 if exist else 0, end=' ')
