@@ -1,33 +1,40 @@
+# DP + 냅색 알고리즘 (최적의 선택을 찾아내는 알고리즘)
+# 돈을 투자할 때마다, 최적의 이익을 얻도록 기록하면서 채우기
+# 핵심 아이디어 -> dp[i][j] : i원을 사용해서 j번째 기업까지 투자할 때 얻을 수 있는 최대 이익
 
-# 입력 처리
-N, M = map(int, input().split())  
-profits = [[0] * (N + 1) for _ in range(M + 1)]
-
-for _ in range(N):
+n, m = map(int, input().split()) # 투자 금액 n, 기업 개수 m
+investments = [[0] * (m + 1)]    # 투자 데이터 (0번째 행 추가)
+for _ in range(n):
     data = list(map(int, input().split()))
-    invest = data[0]  # 투자 금액
-    for company in range(1, M + 1):
-        profits[company][invest] = data[company]
+    investments.append(data)
 
-# DP 테이블 및 경로 추적 배열 초기화
-dp = [[0] * (N + 1) for _ in range(M + 1)]
-path = [[0] * (N + 1) for _ in range(M + 1)]
+# dp 테이블 (이전 최적 결과를 저장)
+# dp[i][j] : i 원을 사용해서 j 번째 기업까지 투자할 때 얻을 수 있는 최대 이익
+dp = [[0] * (m + 1) for _ in range(n + 1)]
+path = [[0] * (m + 1) for _ in range(n + 1)] # 투자 경로 저장
 
-for i in range(1, M + 1):  # 1번 기업부터 M번 기업까지
-    for j in range(N + 1):  # 투자 금액 0원부터 N원까지
-        for k in range(j + 1):  # i번째 기업에 k원을 투자하는 경우 고려
-            new_profit = dp[i - 1][j - k] + profits[i][k]
-            if new_profit > dp[i][j]:  # 최대 이익 갱신
-                dp[i][j] = new_profit
-                path[i][j] = k  # 투자 금액 저장
+# dp
+for money in range(1, n + 1):       # 투자 금액을 1부터 n까지 고려
+    for company in range(1, m + 1): # 각 기업에 투자할지 결정
+        dp[money][company] = dp[money][company-1]   # 우선 이전 기업까지의 최대 이익 복사
+        for invest in range(money + 1): # 현재 가진 금액에서 투자할 금액 선택
+            # money - invest 만큼의 금액으로 이전 기업까지 투자했을 때의 최대 이익을 가져오고,
+            # 여기에 invest 금액을 현재 company(기업)에 투자했을 때 얻을 이익을 더함.
+            new_profit = dp[money - invest][company - 1] + investments[invest][company]
+            if new_profit > dp[money][company]: # 더 큰 이익이면 갱신
+                dp[money][company] = new_profit
+                path[money][company] = invest  # 투자한 금액 저장
 
-# 결과 출력 (최대 이익)
-print(dp[M][N])
+# 최적의 투자 조합 구하기
+money, company = n, m   # 투자할 전체 금액과 마지막 기업부터 추적 시작
+result = [0] * (m + 1)  # 각 기업에 투자한 금액을 저장할 리스트
 
-investment = [0] * (M + 1)
-money = N
-for i in range(M, 0, -1):
-    investment[i] = path[i][money]
-    money -= path[i][money]
 
-print(*investment[1:])
+# path 배열을 이용해 최적의 투자 경로를 역추적
+while company > 0:
+    result[company] = path[money][company]  # 현재 기업에 투자한 금액 저장
+    money -= path[money][company]   # 사용한 금액만큼 차감
+    company -= 1    # 이전 기업으로 이동
+
+print(dp[n][m])
+print(*result[1:])
