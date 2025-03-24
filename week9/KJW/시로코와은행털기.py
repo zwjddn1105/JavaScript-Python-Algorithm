@@ -1,31 +1,23 @@
 n, k, x = map(int, input().split())
-abilities = [list(map(int, input().split())) for _ in range(n)]
-
-# dp[i][j] = i번째 사람까지 고려했을 때, j명을 선택한 경우의 최대 (a의 합, b의 합)
-dp = {}
-dp[(0, 0)] = (0, 0)  # (인덱스, 선택한 사람 수) -> (a의 합, b의 합)
+arr = [0]*n
+dp = [[0]*(x*k + 1) for _ in range(k+1)]
 
 for i in range(n):
-    a, b = abilities[i]
-    new_dp = dp.copy()
-    
-    for (idx, count), (sum_a, sum_b) in dp.items():
-        if count < k:  # 아직 k명을 다 선택하지 않은 경우
-            new_key = (i+1, count+1)
-            new_value = (sum_a + a, sum_b + b)
-            
-            if new_key not in new_dp or new_value[0] * new_value[1] > new_dp[new_key][0] * new_dp[new_key][1]:
-                new_dp[new_key] = new_value
-        
-        # 현재 사람을 선택하지 않는 경우
-        new_key = (i+1, count)
-        if new_key not in new_dp or (sum_a * sum_b > new_dp[new_key][0] * new_dp[new_key][1]):
-            new_dp[new_key] = (sum_a, sum_b)
-    
-    dp = new_dp
+    a, b = map(int, input().split())
+    arr[i] = a
 
-# 최종 결과 반환
-sum_a, sum_b = dp[(n, k)]
-result = sum_a * sum_b
+for p in arr:
+    for i in range(k, 0, -1):  # k부터 1까지
+        for j in range(x*k, p-1, -1):  # x*k부터 p까지
+            dp[i][j] = dp[i][j] or dp[i-1][j-p] 
+            # j-p가 가능하다면 dp[i][j] 가능
+    dp[1][p] = 1  # 첫 번째 아이템에 대해서는 p를 가능하게 설정
 
-print(result)
+
+
+answer = 0
+for i in range(x*k + 1):
+    if dp[k][i]:
+        answer = max(answer, i*(x*k - i))
+# print(dp)
+print(answer)
