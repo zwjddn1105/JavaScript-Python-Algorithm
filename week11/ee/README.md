@@ -13,7 +13,7 @@ for current in range(1, k+1):
     for value in values:
         if (current - value < 0):
             break
-        dp[current] += dp[current-value] + dp[value]
+        dp[current] += dp[current-value]
 
 print(dp[k])
 ```
