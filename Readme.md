@@ -1,10 +1,23 @@
 # JavaScript + Python Algorithm Study(★자스알스★)
 
-## 목표: SSAFY 2학기 취업 목표 프론트엔드 코딩테스트 대비(2025.01.13 ~)
+**목표**: SSAFY 2학기 취업 목표 프론트엔드 코딩테스트 대비(2025.01.13 ~)
 
-## 기간: 취업 때 까지 매일매일
+**기간**: 취업 때 까지 매일매일
 
-## 교재: 백준, 프로그래머스 등 알고리즘 추천문제 + 이코테(저자 나동빈)
+**교재**: 백준, 프로그래머스 등 알고리즘 추천문제
+
+## 함께한 팀원
+
+<table>
+<tr>
+<td align="center"><img src='https://avatars.githubusercontent.com/u/148981647?v=4' alt='김민지' width="100"><br><strong>김민지👑</strong>
+<td align="center"><img src='https://avatars.githubusercontent.com/u/175283788?v=4' alt='이다이' width="100"><br><strong>이다이</strong>
+<td align="center"><img src='https://avatars.githubusercontent.com/u/175284278?v=4' alt='여현승' width="100"><br><strong>여현승</strong>
+<td align="center"><img src='https://avatars.githubusercontent.com/u/175976497?v=4' alt='김정우' width="100"><br>김정우🖐️
+<td align="center"><img src='https://avatars.githubusercontent.com/u/175369230?v=4' alt='김희수' width="100"><br>김희수🖐️
+<td align="center"><img src='https://avatars.githubusercontent.com/u/128114236?v=4' alt='이아영' width="100"><br>이아영🖐️
+</tr>
+</table>
 
 ## 진행방식
 
