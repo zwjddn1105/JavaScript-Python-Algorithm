@@ -6,27 +6,19 @@
 프론트엔드 취업 대비 코딩 테스트 준비
 
 ### 🗓 기간
-2025.01.13 ~ ing
+2025.01.13 ~ 2025.06.04
 
 
 ## 👥 팀원
 
-#### 🔥 함께하는 팀원
 <table>
 <tr>
-<td align="center"><img src='https://avatars.githubusercontent.com/u/148981647?v=4' alt='김민지' width="100"><br><strong>김민지👑</strong>
+<td align="center"><img src='https://avatars.githubusercontent.com/u/175976497?v=4' alt='김정우' width="100"><br><strong>김정우👑</strong>
 <td align="center"><img src='https://avatars.githubusercontent.com/u/175283788?v=4' alt='이다이' width="100"><br><strong>이다이</strong>
+<td align="center"><img src='https://avatars.githubusercontent.com/u/175369230?v=4' alt='김희수' width="100"><br><strong>김희수</strong>
+<td align="center"><img src='https://avatars.githubusercontent.com/u/128114236?v=4' alt='이아영' width="100"><br><strong>이아영</strong>
+<td align="center"><img src='https://avatars.githubusercontent.com/u/148981647?v=4' alt='김민지' width="100"><br><strong>김민지</strong>
 <td align="center"><img src='https://avatars.githubusercontent.com/u/175284278?v=4' alt='여현승' width="100"><br><strong>여현승</strong>
-</tr>
-</table>
-
-#### 🎓 함께한 팀원 
-<table>
-<tr>
-
-<td align="center"><img src='https://avatars.githubusercontent.com/u/175976497?v=4' alt='김정우' width="100"><br>김정우
-<td align="center"><img src='https://avatars.githubusercontent.com/u/175369230?v=4' alt='김희수' width="100"><br>김희수
-<td align="center"><img src='https://avatars.githubusercontent.com/u/128114236?v=4' alt='이아영' width="100"><br>이아영
 </tr>
 </table>
 
@@ -45,9 +37,12 @@
 
 ## 📌 규칙
 
-추후 추가 예정
-
-
+- 평일 매일 1문제 풀이를 목표, 개인사정 상 몰아서 문제풀이도 가능, 주말 등 이용가능 (3일은 넘기지 말기!)
+- 단순 문제를 많이 풀기보단 한 문제를 풀더라도 제대로 깔끔히 풀기
+- 몰라서 못 푼 문제 부끄러워 하지 말기
+- 혼자서의 힘으로 풀이를 못하겠다면 생성형AI 적극활용 + 스터디원들에게 힌트 물어보기
+- 단, 답지 or AI등으로 풀이를 봤다면 이해하고 백지에 다시 혼자 풀기
+- 한 문제를 JS와 Python 두개의 언어로 모두 푸는게 바람직 (필수는 아님)
 
 ## 📖 자바스크립트 입력 기본구조
 
